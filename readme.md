@@ -11,6 +11,7 @@ This book serves as a comprehensive collection of Wireshark analysis solutions. 
 Network analysis can be a challenging task, but with Wireshark, you gain a powerful tool to visualize, understand, and troubleshoot network traffic. This book captures and organizes analysis solutions for future reference, allowing you to learn from previous cases and apply the knowledge to new challenges.
 
 ### **What You’ll Learn**
+
 - **Packet Capture Techniques:** How to efficiently capture live network traffic.
 - **Packet Dissection:** Understanding the structure of network protocols.
 - **Problem Solving:** Identify and resolve common network issues.
@@ -26,10 +27,10 @@ Each solution is presented in a clear, step-by-step format, accompanied by case 
 This book is the result of a collaborative effort by a dedicated team of network analysis enthusiasts. Our goal is to provide an accessible and valuable resource for anyone looking to improve their Wireshark proficiency.
 
 **Tech Support Team Members:**
+
 - **Alwi Sharif**
 - **Amani Ngoi**
 - **Guhad Hussein**
-- **Mohamed Husein**
 - **David Mkirema**
 
 These team members have pooled their skills and experience to create practical, actionable Wireshark solutions that cater to users at all levels, from beginners to seasoned professionals.
@@ -77,5 +78,4 @@ Thank you for choosing our Wireshark Analysis Solutions Book. We’re confident 
 
 **Happy Analyzing!**
 
-— The Tech Support Team (Alwi Sharif, Amani Ngoi, Guhad Hussein, Mohamed Husein, and David Mkirema)
-
+— The Tech Support Team (Alwi Sharif, Amani Ngoi, Guhad Hussein, and David Mkirema)
