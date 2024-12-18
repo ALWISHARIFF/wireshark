@@ -43,7 +43,8 @@
 ---
 
 ### **🛠️ Root Cause of the Problem**
-- **Incorrect Vega Settings**:  
+- **Momentum SBC Bug**:  
+The root cause of the issue was A bug on the momentum SBCs that caused it not to honor other than the audio port to transmit T.38 signals, resulting in no fax data being received.
   The issue occurred because the **server did not honour the vega port that was opened to receive the T.38 packets and thus was misconfigured** to receive **T.38** packets on other than the audio port.  
   As a result, the fax data was not properly received, and Wireshark marked the initial T.38 packets as malformed.  
 
