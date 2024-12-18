@@ -77,4 +77,4 @@ Thank you for choosing our Wireshark Analysis Solutions Book. We’re confident 
 
 **Happy Analyzing!**
 
-— The Tech Support Team (Alwi Sharif, Amani Ngoi, Guhad Hussein, Mohamed Husein, and David Mkirema)
+— The Tech Support Team (Alwi Sharif, Amani Ngoi, Guhad Hussein and David Mkirema)

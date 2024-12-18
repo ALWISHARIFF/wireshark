@@ -4,7 +4,7 @@
 This report examines an issue involving Real-time Transport Protocol (RTP) streams exchanged between the source IP 192.10.1.65 and the destination IP 208.93.9.179. The primary issue identified is the transmission of an oversized payload, which deviates from the expected standard, causing periods of silence during the call.
 
 **2. Issue Summary**
-The client was expected to send  an RTP payload with a size of 20 ms. However, the captured data shows that the payload size transmitted was 30 ms. This inconsistency directly contributed to silence in the call, as the Vega system was unable to properly process the larger-than-expected payload.
+The client was expected to send an RTP payload with a size of 20 ms. However, the captured data shows that the payload size transmitted was 30 ms. This inconsistency directly contributed to silence in the call, as the Vega system was unable to properly process the larger-than-expected payload.
 
 **3. Call Flow Analysis**
 Below is a summary of the key events from the SIP and RTP flows:
@@ -46,3 +46,5 @@ To prevent similar issues in the future, the following recommendations are made:
 
 **9. Conclusion**
 The analysis concludes that the silence observed in the RTP stream was due to a mismatch between the expected and actual RTP payload sizes. Corrective actions, including proper payload size configuration and enhanced monitoring, are recommended to prevent future occurrences of this issue.
+
+#### FILES
