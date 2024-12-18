@@ -44,8 +44,7 @@
 
 ### **🛠️ Root Cause of the Problem**
 - **Incorrect Vega Settings**:  
-  The issue occurred because the **Vega gateway was misconfigured** to receive **T.38 signals on the wrong port**.  
-  Instead of properly switching to the port designated for **T.38 fax**, the Vega was still trying to receive **fax data on the audio (RTP) port**.  
+  The issue occurred because the **server did not honour the vega port that was opened to receive the T.38 packets and thus was misconfigured** to receive **T.38** packets on other than the audio port.  
   As a result, the fax data was not properly received, and Wireshark marked the initial T.38 packets as malformed.  
 
 ---
