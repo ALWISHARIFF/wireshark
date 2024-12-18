@@ -55,9 +55,6 @@ The root cause of the issue was A bug on the momentum SBCs that caused it not to
    - The solution was to configure the **Vega gateway** to receive **T.38 fax data on the audio port** (Port 16834).  
    - This ensures that the T.38 image data is properly received on the same port as G.711 audio, which is in line with the negotiated media parameters.  
 
-2. **Avoid Misinterpretation of Ports**:  
-   - Avoid changing ports during the switch from **G.711 to T.38** to prevent media confusion.  
-   - If a port change is required, ensure it is clearly signaled during the **SIP re-INVITE**.  
 
 ---
 
