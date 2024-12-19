@@ -75,9 +75,6 @@
 - The **correct solution** was to configure the Vega to **receive T.38 fax data on the same port as the audio (16834)**.
 - As referenced in the [Wireshark Q&A post](https://osqa-ask.wireshark.org/questions/57516/t38-malformed-packet/), **Wireshark expects a clean and immediate switchover from RTP (audio) to T.38**. Any residual RTP packets on the media port can be misinterpreted as **malformed T.38 packets**, but this issue is often resolved once the correct configuration is applied.
 
-## **📋 Files**
-
-
 ## 📋 Files
 
 ### Wireshark Capture (.cap)
