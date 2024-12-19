@@ -29,7 +29,3 @@ enable = true  # Enable print support for the document
 theme-white = "xcode"
 theme-dark = "monokai"
 
-[output.customization]
-enable = true  # Allows end users to customize the document
-custom-css = ["custom.css"]  # Custom styles for user-defined themes
-custom-js = ["custom.js"]  # Custom scripts for enhanced interactivity
