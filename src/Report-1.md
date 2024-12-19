@@ -76,3 +76,12 @@
 - Review the Wireshark capture for detailed analysis:  
   [Cloudshark Wireshark Capture](https://www.cloudshark.org/captures/8b386922a24b)  
 
+
+### **🔍 Live Packet Analysis in MDX using CloudShark** 
+### Wireshark Capture (.cap)
+<object data="https://www.cloudshark.org/captures/8b386922a24b" type="text/html" width="100%" height="700px">
+    <p>Your browser does not support embedded Wireshark files. You can view it on Cloudshark: 
+    <a href="https://www.cloudshark.org/captures/8b386922a24b">View Wireshark Capture</a></p>
+</object>
+
+

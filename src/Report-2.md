@@ -21,8 +21,9 @@ The issue was compounded by the presence of multiple ongoing calls during the RT
 **📊 4. RTP Analysis**
 A review of the RTP packets revealed the following key details:
 
+
 | Source Address | Source Port | Destination Address | Destination Port | Start Time | Duration (s) | Payload | Packets | Lost | Min Delta (ms) | Mean Delta (ms) | Lost % | Status  | SSRC formatted |
-| ---------------- | ------------- | --------------------- | ------------------ | ------------ | -------------- | --------- | --------- | ------ | ---------------- | ----------------- | -------- | --------- | ---------------- |
+| -------------- | ----------- | ------------------- | ---------------- | ---------- | ------------ | ------- | ------- | ---- | -------------- | --------------- | ------ | ------- | -------------- |
 | 192.10.1.65    | 10044       | 208.93.9.179        | 24342            | 55.15717   | 38.651138    | g711U   | 1285    | 2    | 29.776         | 30.102          | 0.16   | Problem | 0x19a85265     |
 | 192.10.1.65    | 10040       | 208.93.9.179        | 42138            | 4.19609    | 32.870571    | g711U   | 1094    | 1    | 29.224         | 30.074          | 0.09   | Problem | 0xc697f2be     |
 | 208.93.9.179   | 42138       | 192.10.1.65         | 10040            | 4.18013    | 32.920705    | g711U   | 1645    | 2    | 16.118         | 20.025          | 0.12   | Problem | 0xed910bd8     |
@@ -49,3 +50,18 @@ The increased payload size affected the RTP streams’ consistency and call qual
 **✅ 9. Conclusion**
 The analysis concludes that the silence observed in the RTP stream was due to a mismatch between the expected and actual RTP payload sizes. Corrective actions, including proper payload size configuration and enhanced monitoring, are recommended to prevent future occurrences of this issue.
 
+---
+
+## 📋 **Files and Resources**
+
+### **Wireshark Capture (.cap)**  
+- Review the Wireshark capture for detailed analysis:  
+  [Cloudshark Wireshark Capture](https://www.cloudshark.org/captures/8b386922a24b)  
+
+
+### **🔍 Live Packet Analysis in MDX using CloudShark** 
+### Wireshark Capture (.cap)
+<object data="https://www.cloudshark.org/captures/93300606b5c1" type="text/html" width="100%" height="700px">
+    <p>Your browser does not support embedded Wireshark files. You can view it on Cloudshark: 
+    <a href="https://www.cloudshark.org/captures/93300606b5c1">View Wireshark Capture</a></p>
+</object>
