@@ -1,5 +1,5 @@
 [book]
-authors = ["Alwi Shariff","Amani Ngoi","David Mkrirenya","Guhad Hussein"]
+authors = ["Alwi Shariff", "Amani Ngoi", "David Mkrirenya", "Guhad Hussein"]
 language = "en"
 multilingual = false
 src = "src"
@@ -16,15 +16,20 @@ additional-css = ["theme/pagetoc.css"]
 additional-js = ["theme/pagetoc.js"]
 
 [output.html.fold]
-enable = false
-level = 1
+enable = true  # Enable content folding for better navigation
+level = 2  # Folding applies to level 2 headers and below
 
 [output.html.playground]
-editable = true
+editable = true  # Makes code examples interactive and editable
 
 [output.html.print]
-enable = false
+enable = true  # Enable print support for the document
 
 [output.theme-ace]
 theme-white = "xcode"
 theme-dark = "monokai"
+
+[output.customization]
+enable = true  # Allows end users to customize the document
+custom-css = ["custom.css"]  # Custom styles for user-defined themes
+custom-js = ["custom.js"]  # Custom scripts for enhanced interactivity
