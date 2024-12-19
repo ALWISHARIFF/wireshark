@@ -30,7 +30,6 @@ This book is the result of a collaborative effort by a dedicated team of network
 
 - **Alwi Sharif**
 - **Amani Ngoi**
-- **Guhad Hussein**
 - **David Mkirema**
 
 These team members have pooled their skills and experience to create practical, actionable Wireshark solutions that cater to users at all levels, from beginners to seasoned professionals.
