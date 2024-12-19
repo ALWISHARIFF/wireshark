@@ -34,11 +34,10 @@
 ### **📘 Key Observations**
 
 1. **Port Usage**
-
    - **Server's port (16834)**: Used for **both G.711 audio and T.38 fax** data.
    - **Client's ports (10338 and 10340)**: The client used different ports for receiving **audio (10338)** and **T.38 image data (10340)**.
-2. **Why Were T.38 Packets Malformed?**
 
+2. **Why Were T.38 Packets Malformed?**
    - When the media switched from **G.711 to T.38**, the server kept using port **16834**.
    - Since the switch was not instantaneous, some residual **RTP audio packets** were still being sent on **port 16834**.
    - As referenced in [this post on the Wireshark Q&A site](https://osqa-ask.wireshark.org/questions/57516/t38-malformed-packet/), **Wireshark's telephony analyzer expects an immediate switchover**, assuming the first media packet after renegotiation is already **T.38**.
@@ -50,33 +49,30 @@
 ### **🛠️ Root Cause of the Problem**
 
 - **Incorrect Vega Settings**:
-  The issue occurred because the **Vega gateway was misconfigured** to receive **T.38 signals on the wrong port**.
-  Instead of properly switching to the port designated for **T.38 fax**, the Vega was still trying to receive **fax data on the audio (RTP) port**.
-  As a result, the fax data was not properly received, and Wireshark marked the initial T.38 packets as malformed.
+  - The root cause of the issue was **Momentum SBC's** were not honouring the new port the Vega client had opened to receive the T.38 packets, thus it needed to use the audio port that it previously honoured to receive T.38 signals, resulting in no fax data being received.
+  - The **correct solution** was to configure the Vega to **receive T.38 fax data on the same port as the audio (16834)**.
 
 ---
 
 ### **✅ Correct Solution**
 
 1. **Correct Vega Configuration**:
-
    - The solution was to configure the **Vega gateway** to receive **T.38 fax data on the audio port** (Port 16834).
    - This ensures that the T.38 image data is properly received on the same port as G.711 audio, which is in line with the negotiated media parameters.
-2. **Avoid Misinterpretation of Ports**:
-
-   - Avoid changing ports during the switch from **G.711 to T.38** to prevent media confusion.
-   - If a port change is required, ensure it is clearly signaled during the **SIP re-INVITE**.
 
 ---
 
 ### **📋 Conclusion**
 
-- The root cause of the issue was **incorrect Vega gateway settings** that caused it to expect **T.38 signals on the wrong port**, resulting in no fax data being received.
+- The root cause of the issue was **Momentum SBC's** were not honouring the new port the Vega client had opened to receive the T.38 packets, thus it needed to use the audio port that it previously honoured to receive T.38 signals, resulting in no fax data being received.
 - The **correct solution** was to configure the Vega to **receive T.38 fax data on the same port as the audio (16834)**.
 - As referenced in the [Wireshark Q&A post](https://osqa-ask.wireshark.org/questions/57516/t38-malformed-packet/), **Wireshark expects a clean and immediate switchover from RTP (audio) to T.38**. Any residual RTP packets on the media port can be misinterpreted as **malformed T.38 packets**, but this issue is often resolved once the correct configuration is applied.
+
+---
 
 ## 📋 Files
 
 ### Wireshark Capture (.cap)
 
 <iframe src="https://www.cloudshark.org/captures/8b386922a24b" width="100%" height="700px"></iframe>
+
